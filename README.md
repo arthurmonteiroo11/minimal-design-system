@@ -2,7 +2,7 @@
 
 A lightweight, performance-focused React component library built around dark mode aesthetics, clean neutral palettes, subtle glassmorphism, and responsive micro-interactions.
 
-![Minimal Design System Preview] <img width="974" height="656" alt="preview" src="https://github.com/user-attachments/assets/7e881564-ae65-4475-b23a-4e2eeb36960f" />
+ <img width="974" height="656" alt="preview" src="https://github.com/user-attachments/assets/7e881564-ae65-4475-b23a-4e2eeb36960f" />
 
 ## Overview
 
