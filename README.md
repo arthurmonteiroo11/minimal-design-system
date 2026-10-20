@@ -2,6 +2,8 @@
 
 A lightweight, performance-focused React component library built around dark mode aesthetics, clean neutral palettes, subtle glassmorphism, and responsive micro-interactions.
 
+![Minimal Design System Preview](./preview.png)
+
 ## Overview
 
 This design system provides a collection of reusable UI components designed for modern web applications and admin dashboards. It emphasizes fluid state transitions, strict neutral color constraints, and subtle border hierarchies without relying on heavy drop shadows or aggressive gradients.
@@ -19,25 +21,29 @@ This design system provides a collection of reusable UI components designed for 
 - **GlassCard**: Structural glass container featuring backdrop blur and border highlighting.
 - **Input**: Reusable text input field with focused state borders and label styling.
 - **Badge**: Compact status indicator with custom state indicators (e.g., operational/success states).
+- **Modal**: Floating dialog box with backdrop blur for focused interactions.
 
 ## Project Structure
 
 ```text
 ├── index.html
 ├── package.json
+├── preview.png               # Project preview image
 ├── style.css                 # Global theme variables & resets
 └── src/
     ├── App.jsx               # Dashboard showcase & component preview
     ├── main.jsx              # Application root mount
     └── components/
-        ├── Badge.jsx         # Status badge logic
-        ├── Badge.module.css  # Scoped badge styles
-        ├── Button.jsx        # Button component logic
-        ├── Button.module.css # Scoped button styles
-        ├── GlassCard.jsx     # Glass container logic
+        ├── Badge.jsx         
+        ├── Badge.module.css  
+        ├── Button.jsx        
+        ├── Button.module.css 
+        ├── GlassCard.jsx     
         ├── GlassCard.module.css
-        ├── Input.jsx         # Text input field logic
-        └── Input.module.css  # Scoped input styles
+        ├── Input.jsx         
+        ├── Input.module.css  
+        ├── Modal.jsx         
+        └── Modal.module.css  
 ```
 
 ## Usage Example
@@ -48,6 +54,7 @@ import { Button } from './src/components/Button';
 import { GlassCard } from './src/components/GlassCard';
 import { Input } from './src/components/Input';
 import { Badge } from './src/components/Badge';
+import { Modal } from './src/components/Modal';
 
 export default function App() {
   return (
