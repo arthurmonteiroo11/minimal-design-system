@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import '../style.css';
-import { Button } from './components/Button';
-import { GlassCard } from './components/GlassCard';
-import { Input } from './components/Input';
-import { Badge } from './components/Badge';
-import { Modal } from './components/Modal';
-import { DataTable } from './components/DataTable';
+import { Button } from './components/Button.jsx';
+import { GlassCard } from './components/GlassCard.jsx';
+import { Input } from './components/Input.jsx';
+import { Badge } from './components/Badge.jsx';
+import { Modal } from './components/Modal.jsx';
+import { DataTable } from './components/DataTable.jsx';
 
 export const ApiSettings = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -15,7 +15,7 @@ export const ApiSettings = () => {
     ['Hoje, 10:42', 'GET /v3/search', '200 OK', '18ms'],
     ['Hoje, 10:38', 'POST /v3/videos', '201 Created', '42ms'],
     ['Hoje, 10:15', 'GET /v3/channels', '200 OK', '24ms'],
-    ['Hoje, 09:59', 'DELETE /v3/playlists', '403 Forbidden', '12ms'],
+    ['Hoje, 09:59', 'DELETE /v3/playlists', '403 Forbidden', '12ms']
   ];
 
   return (
@@ -42,10 +42,10 @@ export const ApiSettings = () => {
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
           <GlassCard title="Requisições/min" description="Média das últimas 24 horas">
-            <div style={{ fontSize: '28px', fontWeight: '600', marginTop: '12px' }}>1,420 <span style={{ fontSize: '14px', color: 'var(--text-muted)', fontWeight: '400' }}>/sec</span></div>
+            <div style={{ fontSize: '28px', fontWeight: '600', marginTop: '12px', color: 'var(--text-main)' }}>1,420 <span style={{ fontSize: '14px', color: 'var(--text-muted)', fontWeight: '400' }}>/sec</span></div>
           </GlassCard>
           <GlassCard title="Latência Global" description="Tempo de resposta médio do servidor">
-            <div style={{ fontSize: '28px', fontWeight: '600', marginTop: '12px' }}>24ms</div>
+            <div style={{ fontSize: '28px', fontWeight: '600', marginTop: '12px', color: 'var(--text-main)' }}>24ms</div>
           </GlassCard>
         </div>
 
@@ -61,7 +61,7 @@ export const ApiSettings = () => {
           Esta ação revogará a chave de API atual. Tem certeza de que deseja continuar?
         </p>
         <div style={{ display: 'flex', justifyContent: 'flex-end', gap: '12px' }}>
-          <Button style={{ background: 'transparent', borderColor: 'var(--border-subtle)' }} onClick={() => setIsModalOpen(false)}>Cancelar</Button>
+          <Button style={{ background: 'transparent', borderColor: 'var(--border-subtle)', color: 'var(--text-muted)' }} onClick={() => setIsModalOpen(false)}>Cancelar</Button>
           <Button onClick={() => setIsModalOpen(false)}>Confirmar</Button>
         </div>
       </Modal>
