@@ -5,13 +5,24 @@ import { GlassCard } from './components/GlassCard';
 import { Input } from './components/Input';
 import { Badge } from './components/Badge';
 import { Modal } from './components/Modal';
+import { DataTable } from './components/DataTable';
 
 export default function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  // Dados estruturados para a tabela
+  const tableColumns = ['Data/Hora', 'Endpoint', 'Status', 'Latência'];
+  const tableData = [
+    ['Hoje, 10:42', 'GET /v3/search', '200 OK', '18ms'],
+    ['Hoje, 10:38', 'POST /v3/videos', '201 Created', '42ms'],
+    ['Hoje, 10:15', 'GET /v3/channels', '200 OK', '24ms'],
+    ['Hoje, 09:59', 'DELETE /v3/playlists', '403 Forbidden', '12ms'],
+  ];
+
   return (
     <div style={{ maxWidth: '800px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '32px' }}>
       
+      {/* Cabeçalho */}
       <header style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid var(--border-subtle)', paddingBottom: '20px' }}>
         <div>
           <h1 style={{ fontSize: '20px', fontWeight: '600', letterSpacing: '-0.02em' }}>
@@ -24,8 +35,10 @@ export default function App() {
         <Badge status="success">Operational</Badge>
       </header>
 
+      {/* Painel Principal */}
       <main style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '24px' }}>
         
+        {/* Bloco de API com o placeholder ajustado */}
         <GlassCard title="Autenticação da API" description="Chaves de acesso para integração de sistemas externos.">
           <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', marginTop: '20px' }}>
             <Input label="Nome da Aplicação" placeholder="ex: Youtube API" />
@@ -42,6 +55,7 @@ export default function App() {
           </div>
         </GlassCard>
 
+        {/* Métricas Menores */}
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
           <GlassCard title="Requisições/min" description="Média das últimas 24 horas">
             <div style={{ fontSize: '28px', fontWeight: '600', marginTop: '12px' }}>
@@ -55,6 +69,13 @@ export default function App() {
             </div>
           </GlassCard>
         </div>
+
+        {/* Tabela de Dados */}
+        <GlassCard title="Logs de Auditoria" description="Últimas requisições processadas pela API.">
+          <div style={{ marginTop: '20px' }}>
+            <DataTable columns={tableColumns} data={tableData} />
+          </div>
+        </GlassCard>
 
       </main>
 

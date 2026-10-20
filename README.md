@@ -2,7 +2,7 @@
 
 A lightweight, performance-focused React component library built around dark mode aesthetics, clean neutral palettes, subtle glassmorphism, and responsive micro-interactions.
 
- <img width="974" height="656" alt="preview" src="https://github.com/user-attachments/assets/7e881564-ae65-4475-b23a-4e2eeb36960f" />
+![Minimal Design System Preview] <img width="974" height="656" alt="preview" src="https://github.com/user-attachments/assets/7e881564-ae65-4475-b23a-4e2eeb36960f" />
 
 ## Overview
 
@@ -22,6 +22,7 @@ This design system provides a collection of reusable UI components designed for 
 - **Input**: Reusable text input field with focused state borders and label styling.
 - **Badge**: Compact status indicator with custom state indicators (e.g., operational/success states).
 - **Modal**: Floating dialog box with backdrop blur for focused interactions.
+- **DataTable**: Clean, borderless data presentation table with row-level hover states.
 
 ## Project Structure
 
@@ -38,6 +39,8 @@ This design system provides a collection of reusable UI components designed for 
         ├── Badge.module.css  
         ├── Button.jsx        
         ├── Button.module.css 
+        ├── DataTable.jsx     
+        ├── DataTable.module.css
         ├── GlassCard.jsx     
         ├── GlassCard.module.css
         ├── Input.jsx         
@@ -54,13 +57,12 @@ import { Button } from './src/components/Button';
 import { GlassCard } from './src/components/GlassCard';
 import { Input } from './src/components/Input';
 import { Badge } from './src/components/Badge';
-import { Modal } from './src/components/Modal';
 
 export default function App() {
   return (
     <GlassCard description="Manage system access keys." title="API Authentication">
       <Badge status="success">Operational</Badge>
-      <Input label="Application Name" placeholder="ex: System API"/>
+      <Input label="Application Name" placeholder="ex: Youtube API"/>
       <Button>Generate Key</Button>
     </GlassCard>
   );
